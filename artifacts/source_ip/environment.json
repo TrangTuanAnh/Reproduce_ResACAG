@@ -1,0 +1,44 @@
+{
+  "args": {
+    "splits": [
+      "GRP",
+      "RAND",
+      "TFC"
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "models": [
+      "dt",
+      "hgb",
+      "rf"
+    ],
+    "sets": [
+      "flow",
+      "id",
+      "topo_c",
+      "flow+topo_c",
+      "flow+topo_t",
+      "flow+topo_r",
+      "flow+id"
+    ],
+    "frac": 1.0,
+    "out": "lab/7/runs/full"
+  },
+  "commit": "4c4420addf317ee76ef545798f68994f9f822451",
+  "dropped_untimed": 168,
+  "dropped_by_label": [
+    163,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5
+  ],
+  "rows": 244608
+}

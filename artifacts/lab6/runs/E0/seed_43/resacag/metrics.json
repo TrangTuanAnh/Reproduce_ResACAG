@@ -1,0 +1,683 @@
+{
+  "signature": "e747dcd1d67b63c8da79ed55c1f172fe912fb9cf6c07bfcbc35a4009cd29b4fc",
+  "config": {
+    "dataset": "cse_cic",
+    "variant": "resacag",
+    "seed": 43,
+    "hidden": 32,
+    "learning_rate": 0.007,
+    "dropout": 0.5,
+    "batch_size": 500,
+    "epochs": 12,
+    "patience": 3,
+    "split": "stratified",
+    "max_rows": 0,
+    "strategy": "adaptive",
+    "fanouts": [
+      8,
+      4
+    ],
+    "code_sha256": "c7bec9f099d6e7beca049193dae42efe38bcbe706038c14bc710169e550aaa47",
+    "edge_update": "neighbor",
+    "node2vec_epochs": 2,
+    "data_sha256": "ea1736a132a5ffb5d1b93eae48b5ba4c17433655dbc621236dbf9b3a9fcee8c7|filter=cand_le1",
+    "node2vec_graph": "all_splits_structure",
+    "weight_decay": 0.0,
+    "loss": "unweighted_cross_entropy",
+    "clip_gradient_norm": 5.0,
+    "checkpoint_selection": "validation macro-F1 then loss",
+    "profile_cpu": false
+  },
+  "test": {
+    "accuracy": 0.9731844570817682,
+    "f1_weighted": 0.9607191150527982,
+    "f1_macro": 0.7953872478311874,
+    "per_class": {
+      "Benign": {
+        "precision": 0.9681591287248525,
+        "recall": 0.9998828353837141,
+        "f1-score": 0.9837652980844973,
+        "support": 51210.0
+      },
+      "Brute-force": {
+        "precision": 0.9971878515185602,
+        "recall": 1.0,
+        "f1-score": 0.9985919459307238,
+        "support": 1773.0
+      },
+      "DoS": {
+        "precision": 0.9986577181208054,
+        "recall": 1.0,
+        "f1-score": 0.9993284083277367,
+        "support": 744.0
+      },
+      "DDoS": {
+        "precision": 0.9877105625595932,
+        "recall": 1.0,
+        "f1-score": 0.993817290267562,
+        "support": 9323.0
+      },
+      "Web Attack": {
+        "precision": 1.0,
+        "recall": 0.42066420664206644,
+        "f1-score": 0.5922077922077922,
+        "support": 271.0
+      },
+      "Botnet": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2385.0
+      },
+      "Infiltration": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1643.0
+      },
+      "accuracy": 0.9731844570817682,
+      "macro avg": {
+        "precision": 0.8502450372748303,
+        "recall": 0.77436386314654,
+        "f1-score": 0.7953872478311874,
+        "support": 67349.0
+      },
+      "weighted avg": {
+        "precision": 0.9496038539513144,
+        "recall": 0.9731844570817682,
+        "f1-score": 0.9607191150527982,
+        "support": 67349.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        51204,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1773,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        744,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        9323,
+        0,
+        0,
+        0
+      ],
+      [
+        41,
+        0,
+        0,
+        116,
+        114,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2385,
+        0
+      ],
+      [
+        1643,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "n": 67349
+  },
+  "test_loss": 0.10216762295434284,
+  "test_seconds": 4.10262980000698,
+  "train_validation_seconds": 136.78514330000326,
+  "epochs_completed": 7,
+  "train_batch_wall_seconds_mean": 0.07551637345998888,
+  "process_peak_rss_mib_sampled": 896.2421875,
+  "parameters": 23458,
+  "gpu_peak_allocated_mib": 0,
+  "topology": "observed_ip_port_role_bipartite",
+  "scope": "full_available_dataset",
+  "noise": {
+    "0.0": {
+      "accuracy": 0.9731844570817682,
+      "f1_weighted": 0.9607191150527982,
+      "f1_macro": 0.7953872478311874,
+      "per_class": {
+        "Benign": {
+          "precision": 0.9681591287248525,
+          "recall": 0.9998828353837141,
+          "f1-score": 0.9837652980844973,
+          "support": 51210.0
+        },
+        "Brute-force": {
+          "precision": 0.9971878515185602,
+          "recall": 1.0,
+          "f1-score": 0.9985919459307238,
+          "support": 1773.0
+        },
+        "DoS": {
+          "precision": 0.9986577181208054,
+          "recall": 1.0,
+          "f1-score": 0.9993284083277367,
+          "support": 744.0
+        },
+        "DDoS": {
+          "precision": 0.9877105625595932,
+          "recall": 1.0,
+          "f1-score": 0.993817290267562,
+          "support": 9323.0
+        },
+        "Web Attack": {
+          "precision": 1.0,
+          "recall": 0.42066420664206644,
+          "f1-score": 0.5922077922077922,
+          "support": 271.0
+        },
+        "Botnet": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 2385.0
+        },
+        "Infiltration": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1643.0
+        },
+        "accuracy": 0.9731844570817682,
+        "macro avg": {
+          "precision": 0.8502450372748303,
+          "recall": 0.77436386314654,
+          "f1-score": 0.7953872478311874,
+          "support": 67349.0
+        },
+        "weighted avg": {
+          "precision": 0.9496038539513144,
+          "recall": 0.9731844570817682,
+          "f1-score": 0.9607191150527982,
+          "support": 67349.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          51204,
+          5,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1773,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          744,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          9323,
+          0,
+          0,
+          0
+        ],
+        [
+          41,
+          0,
+          0,
+          116,
+          114,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2385,
+          0
+        ],
+        [
+          1643,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "n": 67349
+    },
+    "0.1": {
+      "accuracy": 0.954579874979584,
+      "f1_weighted": 0.9426831942486849,
+      "f1_macro": 0.7566945686783377,
+      "per_class": {
+        "Benign": {
+          "precision": 0.9490214265838048,
+          "recall": 0.9989650458894747,
+          "f1-score": 0.9733529943395329,
+          "support": 51210.0
+        },
+        "Brute-force": {
+          "precision": 0.990642545227698,
+          "recall": 0.8956570783981952,
+          "f1-score": 0.9407582938388626,
+          "support": 1773.0
+        },
+        "DoS": {
+          "precision": 0.9986449864498645,
+          "recall": 0.9905913978494624,
+          "f1-score": 0.9946018893387314,
+          "support": 744.0
+        },
+        "DDoS": {
+          "precision": 0.986792236131848,
+          "recall": 0.9215917623082699,
+          "f1-score": 0.9530782029950083,
+          "support": 9323.0
+        },
+        "Web Attack": {
+          "precision": 0.4608433734939759,
+          "recall": 0.5645756457564576,
+          "f1-score": 0.5074626865671642,
+          "support": 271.0
+        },
+        "Botnet": {
+          "precision": 1.0,
+          "recall": 0.8649895178197065,
+          "f1-score": 0.9276079136690647,
+          "support": 2385.0
+        },
+        "Infiltration": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1643.0
+        },
+        "accuracy": 0.954579874979584,
+        "macro avg": {
+          "precision": 0.769420652555313,
+          "recall": 0.748052921145938,
+          "f1-score": 0.7566945686783377,
+          "support": 67349.0
+        },
+        "weighted avg": {
+          "precision": 0.9325831256535084,
+          "recall": 0.954579874979584,
+          "f1-score": 0.9426831942486849,
+          "support": 67349.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          51157,
+          13,
+          1,
+          34,
+          4,
+          0,
+          1
+        ],
+        [
+          163,
+          1588,
+          0,
+          21,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          737,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          557,
+          0,
+          0,
+          8592,
+          174,
+          0,
+          0
+        ],
+        [
+          63,
+          0,
+          0,
+          55,
+          153,
+          0,
+          0
+        ],
+        [
+          322,
+          0,
+          0,
+          0,
+          0,
+          2063,
+          0
+        ],
+        [
+          1640,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "n": 67349
+    },
+    "0.2": {
+      "accuracy": 0.9303627373828861,
+      "f1_weighted": 0.9169069642553141,
+      "f1_macro": 0.6920095477624051,
+      "per_class": {
+        "Benign": {
+          "precision": 0.9220066768925381,
+          "recall": 0.9977152899824253,
+          "f1-score": 0.9583681125439625,
+          "support": 51210.0
+        },
+        "Brute-force": {
+          "precision": 0.9908450704225352,
+          "recall": 0.7935702199661591,
+          "f1-score": 0.8813028499843407,
+          "support": 1773.0
+        },
+        "DoS": {
+          "precision": 0.998546511627907,
+          "recall": 0.9233870967741935,
+          "f1-score": 0.9594972067039106,
+          "support": 744.0
+        },
+        "DDoS": {
+          "precision": 0.9752325873774201,
+          "recall": 0.8320283170653223,
+          "f1-score": 0.8979568212073855,
+          "support": 9323.0
+        },
+        "Web Attack": {
+          "precision": 0.35537190082644626,
+          "recall": 0.3173431734317343,
+          "f1-score": 0.33528265107212474,
+          "support": 271.0
+        },
+        "Botnet": {
+          "precision": 1.0,
+          "recall": 0.6830188679245283,
+          "f1-score": 0.8116591928251121,
+          "support": 2385.0
+        },
+        "Infiltration": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1643.0
+        },
+        "accuracy": 0.9303627373828861,
+        "macro avg": {
+          "precision": 0.7488575353066924,
+          "recall": 0.6495804235920518,
+          "f1-score": 0.6920095477624051,
+          "support": 67349.0
+        },
+        "weighted avg": {
+          "precision": 0.9100216489542658,
+          "recall": 0.9303627373828861,
+          "f1-score": 0.9169069642553141,
+          "support": 67349.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          51093,
+          13,
+          1,
+          94,
+          8,
+          0,
+          1
+        ],
+        [
+          341,
+          1407,
+          0,
+          24,
+          1,
+          0,
+          0
+        ],
+        [
+          52,
+          0,
+          687,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          1419,
+          0,
+          0,
+          7757,
+          147,
+          0,
+          0
+        ],
+        [
+          112,
+          0,
+          0,
+          73,
+          86,
+          0,
+          0
+        ],
+        [
+          756,
+          0,
+          0,
+          0,
+          0,
+          1629,
+          0
+        ],
+        [
+          1642,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "n": 67349
+    },
+    "0.3": {
+      "accuracy": 0.9022851118799091,
+      "f1_weighted": 0.885089807030288,
+      "f1_macro": 0.6005635644607121,
+      "per_class": {
+        "Benign": {
+          "precision": 0.8937675070028012,
+          "recall": 0.9969146651044718,
+          "f1-score": 0.942527462383458,
+          "support": 51210.0
+        },
+        "Brute-force": {
+          "precision": 0.9803001876172608,
+          "recall": 0.5893965031020869,
+          "f1-score": 0.73617470940472,
+          "support": 1773.0
+        },
+        "DoS": {
+          "precision": 0.9983844911147012,
+          "recall": 0.8306451612903226,
+          "f1-score": 0.9068231841526045,
+          "support": 744.0
+        },
+        "DDoS": {
+          "precision": 0.9527503526093088,
+          "recall": 0.7245521827737853,
+          "f1-score": 0.8231280082861147,
+          "support": 9323.0
+        },
+        "Web Attack": {
+          "precision": 0.12429378531073447,
+          "recall": 0.08118081180811808,
+          "f1-score": 0.09821428571428571,
+          "support": 271.0
+        },
+        "Botnet": {
+          "precision": 1.0,
+          "recall": 0.5350104821802935,
+          "f1-score": 0.6970773012838022,
+          "support": 2385.0
+        },
+        "Infiltration": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1643.0
+        },
+        "accuracy": 0.9022851118799091,
+        "macro avg": {
+          "precision": 0.707070903379258,
+          "recall": 0.5368142580370111,
+          "f1-score": 0.6005635644607121,
+          "support": 67349.0
+        },
+        "weighted avg": {
+          "precision": 0.8842281174307561,
+          "recall": 0.9022851118799091,
+          "f1-score": 0.885089807030288,
+          "support": 67349.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          51052,
+          21,
+          1,
+          126,
+          9,
+          0,
+          1
+        ],
+        [
+          664,
+          1045,
+          0,
+          63,
+          1,
+          0,
+          0
+        ],
+        [
+          118,
+          0,
+          618,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          2424,
+          0,
+          0,
+          6755,
+          144,
+          0,
+          0
+        ],
+        [
+          113,
+          0,
+          0,
+          136,
+          22,
+          0,
+          0
+        ],
+        [
+          1109,
+          0,
+          0,
+          0,
+          0,
+          1276,
+          0
+        ],
+        [
+          1640,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      "n": 67349
+    }
+  }
+}

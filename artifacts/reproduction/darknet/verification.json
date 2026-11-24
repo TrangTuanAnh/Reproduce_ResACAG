@@ -1,0 +1,15 @@
+{
+  "validated_runs": 2,
+  "runs": [
+    "${WORKSPACE}\\lab\\2\\fidelity\\cse_reference\\seed_42\\resacag",
+    "${WORKSPACE}\\lab\\2\\fidelity\\darknet\\seed_42\\resacag"
+  ],
+  "failures": [],
+  "checks": [
+    "split disjointness and row coverage",
+    "saved predictions independently reproduce metrics",
+    "noise counts and nested masks",
+    "checkpoint selection uses validation only"
+  ],
+  "passed": true
+}

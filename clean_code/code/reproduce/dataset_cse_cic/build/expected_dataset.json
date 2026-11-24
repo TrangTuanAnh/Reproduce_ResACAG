@@ -1,0 +1,7 @@
+{
+  "file": "cse_cic.parquet",
+  "sha256": "ea1736a132a5ffb5d1b93eae48b5ba4c17433655dbc621236dbf9b3a9fcee8c7",
+  "rows": 244776,
+  "built": "2026-10-25",
+  "requires": "pandas 2.3.3, pyarrow 23.0.1"
+}

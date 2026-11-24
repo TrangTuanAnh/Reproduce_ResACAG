@@ -1,0 +1,26 @@
+{
+  "fingerprint": "b56845681db35348c412565e17802afbcad262563ed24b1e427099112d803b39",
+  "loss": [
+    0.5708838598993866,
+    0.24140829754627346
+  ],
+  "config": {
+    "name": "cse_cic",
+    "sha256": "ea1736a132a5ffb5d1b93eae48b5ba4c17433655dbc621236dbf9b3a9fcee8c7|filter=None",
+    "seed": 42,
+    "split": "stratified",
+    "max_rows": 0,
+    "hidden": 32,
+    "node2vec_epochs": 2,
+    "node2vec": {
+      "walks_per_node": 2,
+      "length": 10,
+      "window": 2,
+      "negative_samples": 3,
+      "p": 1.0,
+      "q": 1.0,
+      "negative_distribution": "uniform_active_nodes_all_splits",
+      "graph": "all_splits_structure"
+    }
+  }
+}

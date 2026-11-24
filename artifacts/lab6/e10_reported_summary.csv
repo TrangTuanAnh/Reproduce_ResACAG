@@ -1,0 +1,3 @@
+model,macro_f1_mean,macro_f1_sd,evidence
+dt_graph,86.52,0.11,report/main.tex section E8
+hgb_graph,86.05,0.24,report/main.tex section E8

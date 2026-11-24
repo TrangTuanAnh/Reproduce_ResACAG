@@ -1,0 +1,28 @@
+{
+  "dataset": "cse_cic",
+  "variant": "resacag",
+  "seed": 46,
+  "hidden": 32,
+  "learning_rate": 0.007,
+  "dropout": 0.5,
+  "batch_size": 500,
+  "epochs": 12,
+  "patience": 3,
+  "split": "stratified",
+  "max_rows": 0,
+  "strategy": "adaptive",
+  "fanouts": [
+    8,
+    4
+  ],
+  "code_sha256": "c7bec9f099d6e7beca049193dae42efe38bcbe706038c14bc710169e550aaa47",
+  "edge_update": "neighbor",
+  "node2vec_epochs": 2,
+  "data_sha256": "ea1736a132a5ffb5d1b93eae48b5ba4c17433655dbc621236dbf9b3a9fcee8c7|filter=None",
+  "node2vec_graph": "all_splits_structure",
+  "weight_decay": 0.0,
+  "loss": "unweighted_cross_entropy",
+  "clip_gradient_norm": 5.0,
+  "checkpoint_selection": "validation macro-F1 then loss",
+  "profile_cpu": false
+}

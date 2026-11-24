@@ -1,0 +1,6 @@
+comparison,delta_macro_pp,ci_low_pp,ci_high_pp,p_holm,evidence
+dt_graph - dt,0.81,0.62,2.96,0.003,report/main.tex section E8
+hgb_graph - hgb,2.36,2.02,4.26,0.003,report/main.tex section E8
+dt_graph - dt_rewired,1.54,,,0.003,report/main.tex section E8
+hgb_graph - hgb_rewired,1.11,,,0.003,report/main.tex section E8
+dt_graph - resacag,2.98,1.86,7.21,,report/main.tex section E8

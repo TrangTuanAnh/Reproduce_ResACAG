@@ -1,0 +1,9 @@
+{
+  "source": "https://raw.githubusercontent.com/mateuscmarim/Darknet-traffic-classification/872159b19ffb0dcc28a1b8bf14835c9b63655fd5/dataset/Darknet.zip",
+  "repository_commit": "872159b19ffb0dcc28a1b8bf14835c9b63655fd5",
+  "zip_sha256": "71c0a7eff4ed2e467678d024d9ef46cf97225891adbfa2a192524af0fd14f4f7",
+  "csv_sha256": "6966636108b6210a155a6b6e037b1e725e7875378d8d30961a8b0dc1bd175d01",
+  "downloaded_utc": "2026-09-29T11:29:08.705977+00:00",
+  "official_dataset": "https://www.unb.ca/cic/datasets/darknet2020.html",
+  "provenance": "Public research mirror; official portal displays a registration form; equality to author subset is unverified"
+}

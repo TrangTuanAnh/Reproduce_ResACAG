@@ -1,0 +1,27 @@
+{
+  "dataset": "darknet",
+  "variant": "resacag",
+  "seed": 42,
+  "hidden": 32,
+  "learning_rate": 0.01,
+  "dropout": 0.5,
+  "batch_size": 500,
+  "epochs": 30,
+  "patience": 30,
+  "split": "stratified",
+  "max_rows": 0,
+  "strategy": "adaptive",
+  "fanouts": [
+    8,
+    4
+  ],
+  "code_sha256": "5295c99a1edf8fec593e2a9529eb55fe05a4fe9b75a8dba3d989470e24963e88",
+  "edge_update": "neighbor",
+  "node2vec_epochs": 2,
+  "data_sha256": "6966636108b6210a155a6b6e037b1e725e7875378d8d30961a8b0dc1bd175d01",
+  "weight_decay": 0.0,
+  "loss": "unweighted_cross_entropy",
+  "clip_gradient_norm": 5.0,
+  "checkpoint_selection": "validation macro-F1 then loss",
+  "profile_cpu": false
+}

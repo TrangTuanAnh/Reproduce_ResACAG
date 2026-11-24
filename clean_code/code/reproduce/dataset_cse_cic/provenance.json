@@ -1,0 +1,145 @@
+{
+  "dataset": "CSE-CIC-IDS2018 subset published by E-ResGAT (size and class mix match ResACAG Table 1), with observed endpoints",
+  "file": "cse_cic.parquet",
+  "sha256": "ea1736a132a5ffb5d1b93eae48b5ba4c17433655dbc621236dbf9b3a9fcee8c7",
+  "rows": 244776,
+  "rows_reference_subset": 250928,
+  "class_counts": {
+    "Benign": 171301,
+    "Brute-force": 18256,
+    "DoS": 2534,
+    "DDoS": 32730,
+    "Web Attack": 903,
+    "Botnet": 13538,
+    "Infiltration": 5514
+  },
+  "class_counts_reference_subset": {
+    "Benign": 177192,
+    "Brute-force": 18256,
+    "DoS": 2534,
+    "DDoS": 32730,
+    "Web Attack": 928,
+    "Botnet": 13600,
+    "Infiltration": 5688
+  },
+  "class_coverage": {
+    "Benign": 0.966754,
+    "Brute-force": 1.0,
+    "DoS": 1.0,
+    "DDoS": 1.0,
+    "Web Attack": 0.97306,
+    "Botnet": 0.995441,
+    "Infiltration": 0.969409
+  },
+  "endpoint_source_tiers": {
+    "pcap": 243942,
+    "pcap_reused_flow": 666,
+    "distrinet_exact": 168
+  },
+  "per_day": {
+    "02-14": {
+      "eres_rows": 50000,
+      "with_endpoints": 48753,
+      "tiers": {
+        "pcap": 48717,
+        "distrinet_exact": 36
+      },
+      "rows_with_several_ip_pairs": 18,
+      "rows_with_several_candidates": 12397,
+      "pairs_outside_host_block_dropped": 6362
+    },
+    "02-15": {
+      "eres_rows": 50000,
+      "with_endpoints": 48119,
+      "tiers": {
+        "pcap": 48064,
+        "distrinet_exact": 53,
+        "pcap_reused_flow": 2
+      },
+      "rows_with_several_ip_pairs": 21,
+      "rows_with_several_candidates": 128,
+      "pairs_outside_host_block_dropped": 7241
+    },
+    "02-21": {
+      "eres_rows": 50000,
+      "with_endpoints": 49910,
+      "tiers": {
+        "pcap": 49910
+      },
+      "rows_with_several_ip_pairs": 1347,
+      "rows_with_several_candidates": 1653,
+      "pairs_outside_host_block_dropped": 0
+    },
+    "02-22": {
+      "eres_rows": 362,
+      "with_endpoints": 362,
+      "tiers": {
+        "pcap": 362
+      },
+      "rows_with_several_ip_pairs": 0,
+      "rows_with_several_candidates": 0,
+      "pairs_outside_host_block_dropped": 0
+    },
+    "02-23": {
+      "eres_rows": 566,
+      "with_endpoints": 541,
+      "tiers": {
+        "pcap": 480,
+        "pcap_reused_flow": 61
+      },
+      "rows_with_several_ip_pairs": 0,
+      "rows_with_several_candidates": 0,
+      "pairs_outside_host_block_dropped": 0
+    },
+    "02-28": {
+      "eres_rows": 49996,
+      "with_endpoints": 48497,
+      "tiers": {
+        "pcap": 47853,
+        "pcap_reused_flow": 603,
+        "distrinet_exact": 41
+      },
+      "rows_with_several_ip_pairs": 159,
+      "rows_with_several_candidates": 243,
+      "pairs_outside_host_block_dropped": 293
+    },
+    "03-02": {
+      "eres_rows": 50000,
+      "with_endpoints": 48594,
+      "tiers": {
+        "pcap": 48556,
+        "distrinet_exact": 38
+      },
+      "rows_with_several_ip_pairs": 5651,
+      "rows_with_several_candidates": 5689,
+      "pairs_outside_host_block_dropped": 8338
+    }
+  },
+  "columns": {
+    "label": "E-ResGAT label_mul (0 Benign, 1 Brute-force, 2 DoS, 3 DDoS, 4 Web Attack, 5 Botnet, 6 Infiltration)",
+    "Src IP/Src Port/Dst IP/Dst Port": "endpoints of the matching flow re-split from the original pcap",
+    "77 features": "raw AWS CSV values (inf/NaN kept; the train-only scaler imputes them)",
+    "audit": "eres_row, day, aws_file_row, Timestamp, aws_label, join_tier, join_candidates, join_ip_pairs, pcap_member, start_us"
+  },
+  "topology": "observed_ip_port_role_bipartite",
+  "crosscheck_distrinet": {
+    "rows_both": 98119,
+    "same_ip_pair": 0.9996127151723927,
+    "same_4tuple": 0.9244488834986089
+  },
+  "row_recovery": {
+    "rows": 250928,
+    "matched": 250924,
+    "label_agree": 250384,
+    "unique_feature_vector": 159954,
+    "dup_features_same_dport": 71500,
+    "dup_features_dport_differs": 19470
+  },
+  "known_limitations": "README.md section 'Giới hạn'",
+  "sources": {
+    "eresgat_inputs": "github.com/George730/E-ResGAT @ 3e0ceb8f73e146eb60041ff122449efacb539769 (build/eresgat_inputs.json)",
+    "aws_processed_csv": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Processed Traffic Data for ML Algorithms/<Day>_TrafficForML_CICFlowMeter.csv",
+    "pcap": "https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Original Network Traffic and Log data/<Day>/pcap.zip (byte-identical mirror huggingface.co/datasets/bencorn/CICIDS2018)",
+    "fallback_and_crosscheck": "https://intrusion-detection.distrinet-research.be/CNS2022/Datasets/CSECICIDS2018_improved.zip (Liu, Engelen, Lynar, Essam, Joosen, IEEE CNS 2022)"
+  }
+}

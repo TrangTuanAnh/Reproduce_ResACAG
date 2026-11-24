@@ -1,0 +1,22 @@
+{
+  "repo": "George730/E-ResGAT",
+  "commit": "3e0ceb8f73e146eb60041ff122449efacb539769",
+  "note": "E-ResGAT CSE-CIC artifacts, build input only (z-scored features with random adjacency); never used for training",
+  "files": {
+    "edge_feat_scaled.npy": {
+      "url": "https://media.githubusercontent.com/media/George730/E-ResGAT/3e0ceb8f73e146eb60041ff122449efacb539769/datasets/CSE-CIC/edge_feat_scaled.npy",
+      "sha256": "2fd80962d1aa8cea0ac3b9ea06df5635826a621e9076d82e150206312958c863",
+      "bytes": 77285952
+    },
+    "label_mul.npy": {
+      "url": "https://raw.githubusercontent.com/George730/E-ResGAT/3e0ceb8f73e146eb60041ff122449efacb539769/datasets/CSE-CIC/label_mul.npy",
+      "sha256": "dcfa91c53ad118b55ba485373d5473a6f23b8508e1ce0ef6e30d62bf4ae04bc6",
+      "bytes": 501984
+    },
+    "adj_random.npy": {
+      "url": "https://raw.githubusercontent.com/George730/E-ResGAT/3e0ceb8f73e146eb60041ff122449efacb539769/datasets/CSE-CIC/adj_random.npy",
+      "sha256": "9184d9694bba8552d30ccad9c9c5a789ff9a2f4af526e72a6edbd1ebda8004cd",
+      "bytes": 2007552
+    }
+  }
+}

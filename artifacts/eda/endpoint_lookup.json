@@ -1,0 +1,36 @@
+{
+  "darknet": {
+    "Dst IP:cổng": {
+      "f1_weighted": 92.42,
+      "f1_macro": 67.27,
+      "seen_rate": 89.94
+    },
+    "Dst IP": {
+      "f1_weighted": 92.97,
+      "f1_macro": 64.9,
+      "seen_rate": 97.86
+    },
+    "Src IP": {
+      "f1_weighted": 97.0,
+      "f1_macro": 74.43,
+      "seen_rate": 97.99
+    }
+  },
+  "cse_cic": {
+    "Dst IP:cổng": {
+      "f1_weighted": 96.05,
+      "f1_macro": 74.25,
+      "seen_rate": 81.38
+    },
+    "Dst IP": {
+      "f1_weighted": 94.31,
+      "f1_macro": 55.65,
+      "seen_rate": 97.45
+    },
+    "Src IP": {
+      "f1_weighted": 89.97,
+      "f1_macro": 62.82,
+      "seen_rate": 96.75
+    }
+  }
+}

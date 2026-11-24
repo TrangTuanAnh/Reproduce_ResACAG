@@ -1,0 +1,74 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.6943855225332742,
+    "validation_loss": 0.4355221183064892,
+    "validation_f1_macro": 0.49563795203325905,
+    "validation_f1_weighted": 0.8742409703498543,
+    "seconds": 10.344707200001722
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.34505442062359165,
+    "validation_loss": 0.4478265102494629,
+    "validation_f1_macro": 0.506227172534054,
+    "validation_f1_weighted": 0.8515275437212809,
+    "seconds": 10.617712100000062
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.2799985585184227,
+    "validation_loss": 0.29947700706443053,
+    "validation_f1_macro": 0.6103754682294434,
+    "validation_f1_weighted": 0.8924758507516877,
+    "seconds": 10.449420499997359
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.26908618263369677,
+    "validation_loss": 0.34001862462504995,
+    "validation_f1_macro": 0.582724031670845,
+    "validation_f1_weighted": 0.8619919677123595,
+    "seconds": 16.223367300000973
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.24223816645325807,
+    "validation_loss": 0.2878441030187139,
+    "validation_f1_macro": 0.6307564856742189,
+    "validation_f1_weighted": 0.8976260531077057,
+    "seconds": 23.570018599999457
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.23535425734604895,
+    "validation_loss": 0.2448667770942419,
+    "validation_f1_macro": 0.6843056581880036,
+    "validation_f1_weighted": 0.9164102245354273,
+    "seconds": 24.446675300001516
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.2250393498004073,
+    "validation_loss": 0.25116432926570614,
+    "validation_f1_macro": 0.6761692389727917,
+    "validation_f1_weighted": 0.9014807289788765,
+    "seconds": 22.41404120000152
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.21887758485935138,
+    "validation_loss": 0.22628685020215322,
+    "validation_f1_macro": 0.6781507620335231,
+    "validation_f1_weighted": 0.9203140661583702,
+    "seconds": 23.240782999997464
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.21915219110200018,
+    "validation_loss": 0.5836787838736885,
+    "validation_f1_macro": 0.596619260434718,
+    "validation_f1_weighted": 0.7877307336262169,
+    "seconds": 22.82839900000181
+  }
+]

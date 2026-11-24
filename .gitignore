@@ -1,0 +1,42 @@
+# Dataset archives and extracted inputs. Keep the download guide and its figures.
+/data/*
+!/data/README.md
+!/data/SHA256SUMS.txt
+!/data/figures/
+/clean_code/code/dataset/
+
+# Experiment outputs and local environments.
+/runs/
+/cse_build/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+.vscode/
+.idea/
+*.py[cod]
+*.log
+.DS_Store
+Thumbs.db
+
+# Local data, model files, and archives.
+*.npz
+*.npy
+*.parquet
+*.pcap
+*.pcapng
+*.pt
+*.pth
+*.pkl
+*.pickle
+*.joblib
+*.ckpt
+*.zip
+*.7z
+*.tar
+*.gz
+*.pdf
+!/artifacts/report_figures/*.pdf

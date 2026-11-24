@@ -1,0 +1,25 @@
+{
+  "fingerprint": "a4730aea5f96c724baee657b6a09f51a22ccf846de0ca573db3a60e6d832f8fc",
+  "loss": [
+    0.8545394275770631,
+    0.25921322692965354
+  ],
+  "config": {
+    "name": "darknet",
+    "sha256": "6966636108b6210a155a6b6e037b1e725e7875378d8d30961a8b0dc1bd175d01",
+    "seed": 42,
+    "split": "stratified",
+    "max_rows": 0,
+    "hidden": 32,
+    "node2vec_epochs": 2,
+    "node2vec": {
+      "walks_per_node": 2,
+      "length": 10,
+      "window": 2,
+      "negative_samples": 3,
+      "p": 1.0,
+      "q": 1.0,
+      "negative_distribution": "uniform_active_train_nodes"
+    }
+  }
+}

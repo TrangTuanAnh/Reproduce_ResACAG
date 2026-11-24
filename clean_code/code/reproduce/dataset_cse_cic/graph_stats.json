@@ -1,0 +1,167 @@
+{
+ "observed_ip_port": {
+  "edges": 244776,
+  "nodes": 232838,
+  "src_nodes": 185642,
+  "dst_nodes": 47196,
+  "node_degree_mean": 2.1025433992733147,
+  "node_degree_max": 52052,
+  "edges_with_neighbor_edges": 0.9849617609569565,
+  "edge_homophily_mean": 0.9517679698830223,
+  "expected_if_random": 0.5168878453401083,
+  "per_class": {
+   "Benign": {
+    "edges": 171301,
+    "with_neighbors": 0.979369647579407,
+    "homophily": 0.9696369856089212,
+    "prior": 0.6998275974768768
+   },
+   "Brute-force": {
+    "edges": 18256,
+    "with_neighbors": 1.0,
+    "homophily": 0.9989613776649892,
+    "prior": 0.07458247540608556
+   },
+   "DoS": {
+    "edges": 2534,
+    "with_neighbors": 1.0,
+    "homophily": 0.9988171013029037,
+    "prior": 0.010352322123083962
+   },
+   "DDoS": {
+    "edges": 32730,
+    "with_neighbors": 1.0,
+    "homophily": 0.9768100832574391,
+    "prior": 0.1337140896166291
+   },
+   "Web Attack": {
+    "edges": 903,
+    "with_neighbors": 1.0,
+    "homophily": 0.09012926968121793,
+    "prior": 0.0036890871654083734
+   },
+   "Botnet": {
+    "edges": 13538,
+    "with_neighbors": 1.0,
+    "homophily": 0.9996182508482786,
+    "prior": 0.05530770990619995
+   },
+   "Infiltration": {
+    "edges": 5514,
+    "with_neighbors": 0.9733405875952121,
+    "homophily": 0.08201163656038976,
+    "prior": 0.022526718305716245
+   }
+  }
+ },
+ "observed_ip_only": {
+  "edges": 244776,
+  "nodes": 17066,
+  "src_nodes": 9488,
+  "dst_nodes": 7578,
+  "node_degree_mean": 28.68580803937654,
+  "node_degree_max": 52052,
+  "edges_with_neighbor_edges": 1.0,
+  "edge_homophily_mean": 0.9124757725198158,
+  "expected_if_random": 0.5168878453401083,
+  "per_class": {
+   "Benign": {
+    "edges": 171301,
+    "with_neighbors": 1.0,
+    "homophily": 0.9482869185195923,
+    "prior": 0.6998275974768768
+   },
+   "Brute-force": {
+    "edges": 18256,
+    "with_neighbors": 1.0,
+    "homophily": 0.910155276779483,
+    "prior": 0.07458247540608556
+   },
+   "DoS": {
+    "edges": 2534,
+    "with_neighbors": 1.0,
+    "homophily": 0.18444367956925647,
+    "prior": 0.010352322123083962
+   },
+   "DDoS": {
+    "edges": 32730,
+    "with_neighbors": 1.0,
+    "homophily": 0.966909530360167,
+    "prior": 0.1337140896166291
+   },
+   "Web Attack": {
+    "edges": 903,
+    "with_neighbors": 1.0,
+    "homophily": 0.04159644644647776,
+    "prior": 0.0036890871654083734
+   },
+   "Botnet": {
+    "edges": 13538,
+    "with_neighbors": 1.0,
+    "homophily": 0.8614990544574598,
+    "prior": 0.05530770990619995
+   },
+   "Infiltration": {
+    "edges": 5514,
+    "with_neighbors": 1.0,
+    "homophily": 0.08687205821482966,
+    "prior": 0.022526718305716245
+   }
+  }
+ },
+ "eresgat_random": {
+  "edges": 244776,
+  "nodes": 117951,
+  "src_nodes": 58943,
+  "dst_nodes": 59008,
+  "node_degree_mean": 4.150469262659918,
+  "node_degree_max": 15,
+  "edges_with_neighbor_edges": 0.9997303657221296,
+  "edge_homophily_mean": 0.5173901990713539,
+  "expected_if_random": 0.5168878453401083,
+  "per_class": {
+   "Benign": {
+    "edges": 171301,
+    "with_neighbors": 0.9997431421883118,
+    "homophily": 0.700100283141911,
+    "prior": 0.6998275974768768
+   },
+   "Brute-force": {
+    "edges": 18256,
+    "with_neighbors": 0.9996165644171779,
+    "homophily": 0.07595161421077197,
+    "prior": 0.07458247540608556
+   },
+   "DoS": {
+    "edges": 2534,
+    "with_neighbors": 1.0,
+    "homophily": 0.009875882251572859,
+    "prior": 0.010352322123083962
+   },
+   "DDoS": {
+    "edges": 32730,
+    "with_neighbors": 0.9996944699052857,
+    "homophily": 0.13466588450911074,
+    "prior": 0.1337140896166291
+   },
+   "Web Attack": {
+    "edges": 903,
+    "with_neighbors": 1.0,
+    "homophily": 0.0033211727979169836,
+    "prior": 0.0036890871654083734
+   },
+   "Botnet": {
+    "edges": 13538,
+    "with_neighbors": 0.999704535381888,
+    "homophily": 0.05636794751959466,
+    "prior": 0.05530770990619995
+   },
+   "Infiltration": {
+    "edges": 5514,
+    "with_neighbors": 0.9998186434530286,
+    "homophily": 0.02362858143552972,
+    "prior": 0.022526718305716245
+   }
+  }
+ }
+}

@@ -1,0 +1,7 @@
+model,seeds,recall_WebAttack_mean,recall_Infiltration_mean,macro_F1_7classes_mean,macro_F1_without_Infiltration_mean,macro_F1_7classes_sd
+resacag,5,84.06,0.19,83.55,97.41,1.61
+dt,5,93.06,18.02,85.72,97.75,0.1
+rf,5,82.95,12.42,84.87,96.95,0.26
+et,5,78.6,14.86,84.23,96.16,0.18
+hgb,5,95.87,56.58,83.69,95.36,0.28
+catboost,5,98.38,75.39,80.4,91.7,0.27
