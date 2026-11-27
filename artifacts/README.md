@@ -10,6 +10,8 @@ Thư mục này lưu số liệu đã dùng trong báo cáo. Có thể đọc b�
 | **Node2vec chỉ học trên train** | [Bản ghi từng seed](lab6/runs/E5/) và dòng `E5 resacag (train-only) - E6 resacag (transductive)` trong [bảng so sánh](lab6/lab6_comparisons.csv) |
 | **Chia theo IP nguồn (E9)** | [Giao thức](source_ip/protocol.md), [chỉ số từng lượt chạy](source_ip/metrics.csv), [bảng tổng hợp](source_ip/summary.csv) và [chênh lệch trong Bảng 13](source_ip/contrasts.csv). `RAND` chia ngẫu nhiên theo luồng. `GRP` chia theo IP nguồn |
 | **Phụ lục A** | [Kết quả hai phép thử thăm dò](appendix/README.md), gồm cổng cosine và lịch sử luồng trước khi dự đoán |
+| **Phụ lục B và C** | [Các bảng LaTeX](report_tables/) về độ phủ khôi phục, cách chia thời gian, recall theo lớp, seed và tài nguyên. Lệnh `report-tables` xuất lại các bảng từ artifact đã lưu |
+| **Phụ lục D** | [Kết quả bốn cấu hình IP test](source_ip/configurations/README.md), gồm 12 split, số luồng từng lớp và các chênh lệch ghép cặp |
 | **Hình báo cáo** | [Các hình PDF](report_figures/) về phân bố lớp, huấn luyện, ma trận nhầm lẫn, mức đồng nhãn của luồng lân cận và kết quả đối chứng |
 
 Tên thư mục trong `lab6/runs/` dùng ID của Lab 6. Ví dụ, lượt so sánh chính E1 trong báo cáo nằm ở `lab6/runs/E6/`. Xem [bảng đối chiếu ID](../README.md#chạy-lại-theo-phạm-vi-báo-cáo) để tìm các lượt khác. Các tệp này lưu kết quả ở cấp lớp, lượt chạy và phép so sánh. Dataset để chạy lại được tải riêng theo [hướng dẫn dữ liệu](../data/README.md).

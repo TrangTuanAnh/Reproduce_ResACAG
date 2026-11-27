@@ -20,13 +20,13 @@ def tfc_split(y, t_us, train_frac=0.7):
     return np.sort(np.concatenate(tr)), np.sort(np.concatenate(te))
 
 
-def grp_split(y, src, seed, test_frac=0.3):
+def grp_split(y, src, seed, test_frac=0.3, initial_sides=None):
     """Chia theo nhóm IP nguồn: một IP chỉ ở một phía cho mọi lớp. Xử lý lớp ít IP nhất trước.
     Lớp có >=2 IP: >=1 IP mỗi phía nếu có thể. Trả về (train_idx, test_idx, report)."""
     rng = np.random.default_rng(seed)
     classes = np.unique(y)
     ips_of = {c: np.unique(src[y == c]) for c in classes}
-    side = {}  # ip -> 0 train / 1 test
+    side = dict(initial_sides or {})  # ip -> 0 train / 1 test
     for c in sorted(classes, key=lambda c: len(ips_of[c])):
         ips = list(ips_of[c])
         todo = [ip for ip in ips if ip not in side]

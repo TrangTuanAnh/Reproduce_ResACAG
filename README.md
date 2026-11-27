@@ -16,6 +16,7 @@ Repo cung cấp bản triển khai độc lập của ResACAG, mã tái lập th
 | `clean_code/lab/6/code/run_cse_cic_controls.py` | Thực nghiệm chính và các đối chứng có kiểm soát |
 | `clean_code/lab/6/code/analyze_cse_cic_controls.py` | Tổng hợp chỉ số, bootstrap theo IP nguồn và hiệu chỉnh Holm |
 | `clean_code/lab/7/code/run_source_ip_experiments.py` | Đối chiếu chia ngẫu nhiên và chia theo IP nguồn |
+| `clean_code/lab/7/code/run_source_ip_configurations.py` | Đối chứng topology ở bốn cách chọn IP test của Brute-force và DoS |
 | `clean_code/lab/9/code/run_improvements.py` | Hai phép thử ở Phụ lục A, cổng cosine và lịch sử luồng |
 | `clean_code/report_analysis/` | Khảo sát dữ liệu, baseline tra nhãn theo đầu kết nối và mã vẽ hình |
 | `data/` | Hướng dẫn tải dữ liệu, checksum của hai tệp ZIP và hình minh họa quy trình dựng đồ thị |
@@ -105,6 +106,17 @@ python reproduce_report.py source-ip --data-root $Data
 Các CSV `e10_reported_*.csv` ghi các giá trị E8 đã trình bày trong báo cáo. Bản ghi hiện có của E10 là kết quả tổng hợp. Mã chạy lại nằm trong `run_cse_cic_controls.py`.
 
 Lệnh `eda` xuất các số đếm của Bảng 5 trong `dataset_summary.json` và `feature_diagnostics.json`. Lệnh `source-ip` tạo `summary.csv` và `contrasts.csv`. Tệp thứ hai ghi các chênh lệch E9 theo điểm phần trăm và số seed giảm sau khi thêm danh tính ở GRP.
+
+### Số liệu chi tiết ở Phụ lục B, C và D
+
+```powershell
+python reproduce_report.py report-tables
+python reproduce_report.py source-ip-configurations --data-root $Data
+```
+
+Lệnh `report-tables` dùng kết quả đã lưu để tái tạo 16 bảng LaTeX, gồm độ phủ khôi phục IP:cổng, số dòng theo ngày và theo thời gian, trùng đặc trưng, recall theo lớp, độ nhạy với nhiễu, điểm theo seed và thông số thực thi. Bản dùng trong báo cáo nằm ở [artifacts/report_tables](artifacts/report_tables/).
+
+Lệnh `source-ip-configurations` chạy ba mô hình với năm bộ đặc trưng trên 12 split và tổng hợp các hiệu ghép cặp của Phụ lục D. Điểm gốc, số luồng theo lớp ở mỗi split và cách tính khoảng xấp xỉ nằm trong [artifacts/source_ip/configurations](artifacts/source_ip/configurations/README.md).
 
 ### Đối chứng phạm vi node2vec
 

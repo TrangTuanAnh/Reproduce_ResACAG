@@ -1,0 +1,43 @@
+{
+  "cfgs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "seeds": [
+    301,
+    302,
+    303
+  ],
+  "sets": [
+    "flow",
+    "flow+topo_c",
+    "flow+topo_r",
+    "flow+topo_t",
+    "flow+id"
+  ],
+  "commit": "0a1a6b0c52ae427a142558f2b37be8ccbf55cdc2",
+  "versions": {
+    "python": "3.12.16",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "sklearn": "1.7.2",
+    "scipy": "1.15.3"
+  },
+  "configuration_order": "Brute-force index then DoS index, each from sorting source IP strings",
+  "time_window_us": 300000000,
+  "dataset_sha256": "ea1736a132a5ffb5d1b93eae48b5ba4c17433655dbc621236dbf9b3a9fcee8c7"
+}

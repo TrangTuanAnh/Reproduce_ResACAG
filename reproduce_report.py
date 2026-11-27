@@ -98,7 +98,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("target", choices=[
         "verify", "darknet", "cse-cic", "controls", "analyze-controls", "node2vec-train",
-        "source-ip", "appendix-gate", "appendix-history", "eda", "figures"
+        "source-ip", "source-ip-configurations", "appendix-gate", "appendix-history",
+        "eda", "figures", "report-tables"
     ])
     parser.add_argument("--data-root", type=Path, default=CODE / "code" / "dataset")
     parser.add_argument("--out", type=Path, default=ROOT / "runs", help="Directory for regenerated outputs.")
@@ -142,6 +143,11 @@ def main():
                "--frac", "1.0", "--out", destination)
         python(ANALYSIS / "summarize_source_ip.py", destination / "metrics.csv", destination / "summary.csv",
                "--contrasts", destination / "contrasts.csv")
+    elif args.target == "source-ip-configurations":
+        verify_inputs(data_root, "cse_cic")
+        destination = out / "source_ip_configurations"
+        python(LAB7 / "run_source_ip_configurations.py", "--data-root", data_root, "--out", destination)
+        python(ANALYSIS / "summarize_ip_configurations.py", destination / "metrics.csv", destination / "summary.csv")
     elif args.target in ("appendix-gate", "appendix-history"):
         verify_inputs(data_root, "cse_cic")
         experiment = args.target.removeprefix("appendix-")
@@ -156,6 +162,9 @@ def main():
         regenerated = out / "eda" / "dataset_summary.json"
         eda = regenerated if regenerated.is_file() else ARTIFACTS / "eda" / "dataset_summary.json"
         export_figures(eda, out / "figures")
+    elif args.target == "report-tables":
+        python(ANALYSIS / "export_diagnostic_tables.py", ARTIFACTS,
+               CORE / "dataset_cse_cic" / "provenance.json", out / "report_tables")
 
 
 if __name__ == "__main__":
