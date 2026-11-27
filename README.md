@@ -16,6 +16,7 @@ Repo cung cấp bản triển khai độc lập của ResACAG, mã tái lập th
 | `clean_code/lab/6/code/run_cse_cic_controls.py` | Thực nghiệm chính và các đối chứng có kiểm soát |
 | `clean_code/lab/6/code/analyze_cse_cic_controls.py` | Tổng hợp chỉ số, bootstrap theo IP nguồn và hiệu chỉnh Holm |
 | `clean_code/lab/7/code/run_source_ip_experiments.py` | Đối chiếu chia ngẫu nhiên và chia theo IP nguồn |
+| `clean_code/lab/9/code/run_improvements.py` | Hai phép thử ở Phụ lục A, cổng cosine và lịch sử luồng |
 | `clean_code/report_analysis/` | Khảo sát dữ liệu, baseline tra nhãn theo đầu kết nối và mã vẽ hình |
 | `data/` | Hướng dẫn tải dữ liệu, checksum của hai tệp ZIP và hình minh họa quy trình dựng đồ thị |
 | `artifacts/` | Kết quả tổng hợp, cấu hình, lịch sử huấn luyện, hình của báo cáo và checksum |
@@ -102,6 +103,31 @@ python reproduce_report.py source-ip --data-root $Data
 | E9 | Lab 7, RAND và GRP | Chia theo IP nguồn, với đặc trưng luồng và đặc trưng danh tính |
 
 Các CSV `e10_reported_*.csv` ghi các giá trị E8 đã trình bày trong báo cáo. Bản ghi hiện có của E10 là kết quả tổng hợp. Mã chạy lại nằm trong `run_cse_cic_controls.py`.
+
+Lệnh `eda` xuất các số đếm của Bảng 5 trong `dataset_summary.json` và `feature_diagnostics.json`. Lệnh `source-ip` tạo `summary.csv` và `contrasts.csv`. Tệp thứ hai ghi các chênh lệch E9 theo điểm phần trăm và số seed giảm sau khi thêm danh tính ở GRP.
+
+### Đối chứng phạm vi node2vec
+
+Lệnh dưới đây chạy năm seed với node2vec chỉ học trên train. Để tính chênh lệch ghép cặp, chạy E1 và đối chứng trong cùng thư mục đầu ra trước khi tổng hợp.
+
+```powershell
+python reproduce_report.py controls --experiment E1 --data-root $Data
+python reproduce_report.py node2vec-train --data-root $Data
+python reproduce_report.py analyze-controls
+```
+
+Lượt chỉ học trên train được ghi là `E5` trong mã thí nghiệm Lab 6. E5 trong báo cáo dùng biểu diễn nút từ đặc trưng luồng và có ID Lab 6 `E7b`.
+
+### Phép thử ở Phụ lục A
+
+```powershell
+python reproduce_report.py appendix-gate --data-root $Data
+python reproduce_report.py appendix-history --data-root $Data
+```
+
+Các lệnh chạy cổng cosine với seed 42 đến 44 và lịch sử luồng với seed 42 đến 46. Cổng cosine dùng chung một embedding node2vec seed 42 học trên cấu trúc không nhãn của cả ba tập. Lệnh mặc định tạo lại embedding. Nếu đã có đúng cache thì có thể truyền `--node2vec` với đường dẫn tới `node2vec.npy` và đặt `node2vec_key.json` cạnh tệp đó. Lượt gốc chạy cổng cosine trên CUDA. Có thể chọn `--device cuda` hoặc `--device cpu` khi chạy lại, với khả năng sai khác số học giữa thiết bị và phiên bản thư viện.
+
+Đối chiếu các CSV và số liệu từng seed ở [artifacts/appendix](artifacts/appendix/README.md). Mỗi lệnh ghi vào một thư mục mới, nên dùng `--out` nếu muốn giữ cả các lần chạy trước.
 
 ## Kiểm tra gói
 

@@ -1,0 +1,44 @@
+{
+  "0": {
+    "ips": 9331,
+    "train_flows": 126408,
+    "test_flows": 44730,
+    "supported": true
+  },
+  "1": {
+    "ips": 2,
+    "train_flows": 9072,
+    "test_flows": 9184,
+    "supported": true
+  },
+  "2": {
+    "ips": 2,
+    "train_flows": 1995,
+    "test_flows": 539,
+    "supported": true
+  },
+  "3": {
+    "ips": 10,
+    "train_flows": 22835,
+    "test_flows": 9895,
+    "supported": true
+  },
+  "4": {
+    "ips": 6,
+    "train_flows": 819,
+    "test_flows": 84,
+    "supported": true
+  },
+  "5": {
+    "ips": 11,
+    "train_flows": 10177,
+    "test_flows": 3361,
+    "supported": true
+  },
+  "6": {
+    "ips": 545,
+    "train_flows": 3756,
+    "test_flows": 1753,
+    "supported": true
+  }
+}

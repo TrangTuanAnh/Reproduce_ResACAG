@@ -1,0 +1,16 @@
+{
+  "dataset_sha256": "ea1736a132a5ffb5d1b93eae48b5ba4c17433655dbc621236dbf9b3a9fcee8c7",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "device": "cuda",
+  "max_epochs": 12,
+  "code_sha256": "0a0ef409211d5092a052e19c88f42522176bac13749e69af1b123d374011f799",
+  "torch": "2.5.1+cu121",
+  "topology": "seed-42 node2vec on unlabeled full structure, shared by all matched pairs",
+  "node2vec_sha256": "97373bae17953ab91e3a5c46cd03f51c46f087c9e1eeb16fe59fc849a943909d",
+  "checkpoint": "validation macro-F1 then cross-entropy, patience 3",
+  "gate": "logistic weights of cosine to other sampled peers, initialized to uniform; both layers"
+}

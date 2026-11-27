@@ -16,6 +16,7 @@ ARTIFACTS = ROOT / "artifacts"
 ANALYSIS = CODE / "report_analysis"
 LAB6 = CODE / "lab" / "6" / "code"
 LAB7 = CODE / "lab" / "7" / "code"
+LAB9 = CODE / "lab" / "9" / "code"
 SEEDS = ["42", "43", "44", "45", "46"]
 CONTROLS = {"E1": "E6", "E2": "E0", "E3": "E2", "E4": "E7a",
             "E5": "E7b", "E6": "E8", "E7": "E9", "E8": "E10"}
@@ -90,20 +91,26 @@ def export_figures(eda, destination):
            destination / "02_phan_bo_lop.pdf", destination / "02_phan_bo_lop.png")
     python(ANALYSIS / "plot_controlled_experiments.py", lab6 / "lab6_summary.csv",
            lab6 / "lab6_comparisons.csv", lab6 / "e10_reported_summary.csv", destination)
+    python(ANALYSIS / "plot_source_ip.py", ARTIFACTS / "source_ip" / "summary.csv", destination)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("target", choices=[
-        "verify", "darknet", "cse-cic", "controls", "analyze-controls", "source-ip", "eda", "figures"
+        "verify", "darknet", "cse-cic", "controls", "analyze-controls", "node2vec-train",
+        "source-ip", "appendix-gate", "appendix-history", "eda", "figures"
     ])
     parser.add_argument("--data-root", type=Path, default=CODE / "code" / "dataset")
     parser.add_argument("--out", type=Path, default=ROOT / "runs", help="Directory for regenerated outputs.")
-    parser.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto", help="Device for DarkNet.")
+    parser.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto",
+                        help="Device for DarkNet and the appendix cosine gate.")
+    parser.add_argument("--node2vec", type=Path, help="Optional seed-42 cache for the appendix cosine gate.")
     parser.add_argument("--experiment", choices=CONTROLS, help="Run a single Part C experiment by report ID.")
     args = parser.parse_args()
     if args.experiment and args.target != "controls":
         parser.error("--experiment is used with the controls target.")
+    if args.node2vec and args.target != "appendix-gate":
+        parser.error("--node2vec is used with the appendix-gate target.")
     data_root, out = args.data_root.resolve(), args.out.resolve()
 
     if args.target == "verify":
@@ -124,13 +131,24 @@ def main():
     elif args.target == "analyze-controls":
         python(LAB6 / "analyze_cse_cic_controls.py", "--runs-root", out / "lab6",
                "--output", out / "lab6" / "summary")
+    elif args.target == "node2vec-train":
+        verify_inputs(data_root, "cse_cic")
+        run_control("E5", SEEDS, data_root, out / "lab6" / "E5", ["resacag"])
     elif args.target == "source-ip":
         verify_inputs(data_root, "cse_cic")
         destination = out / "source_ip"
         python(LAB7 / "run_source_ip_experiments.py", "--data-root", data_root, "--splits", "RAND", "GRP",
                "--sets", "flow", "flow+id", "--models", "dt", "rf", "hgb", "--seeds", *SEEDS,
                "--frac", "1.0", "--out", destination)
-        python(ANALYSIS / "summarize_source_ip.py", destination / "metrics.csv", destination / "summary.csv")
+        python(ANALYSIS / "summarize_source_ip.py", destination / "metrics.csv", destination / "summary.csv",
+               "--contrasts", destination / "contrasts.csv")
+    elif args.target in ("appendix-gate", "appendix-history"):
+        verify_inputs(data_root, "cse_cic")
+        experiment = args.target.removeprefix("appendix-")
+        seeds = SEEDS[:3] if experiment == "gate" else SEEDS
+        cache = ["--node2vec", args.node2vec.resolve()] if args.node2vec else []
+        python(LAB9 / "run_improvements.py", experiment, "--data", data_root / "cse_cic" / "cse_cic.parquet",
+               "--out", out / "appendix" / experiment, "--seeds", *seeds, "--device", args.device, *cache)
     elif args.target == "eda":
         verify_inputs(data_root, "darknet", "cse_cic")
         export_eda(data_root, out / "eda")

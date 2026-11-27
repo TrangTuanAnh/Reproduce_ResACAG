@@ -1,0 +1,28 @@
+{
+  "dataset_sha256": "ea1736a132a5ffb5d1b93eae48b5ba4c17433655dbc621236dbf9b3a9fcee8c7",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "timed_rows": 244608,
+  "undated_rows": 168,
+  "code_sha256": "717a0c7873efa0c2b110aa2775da04f40be5debcbc3943984974191af25d7dab",
+  "models": [
+    "Decision Tree",
+    "HistGradientBoosting"
+  ],
+  "split": "Lab 7 GRP (original IP ordering)",
+  "history_columns": [
+    "Flow Duration",
+    "Tot Fwd Pkts",
+    "Tot Bwd Pkts",
+    "TotLen Fwd Pkts",
+    "TotLen Bwd Pkts"
+  ],
+  "window_us": 300000000,
+  "history_rule": "within each split independently; previous completions in [start-300s, start), no labels",
+  "vectors": "separate source/destination IP-role log count and mean log flow features; empty -> zero"
+}
